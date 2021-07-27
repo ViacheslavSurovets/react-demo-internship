@@ -1,0 +1,34 @@
+@import 'src/styles/common';
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+
+  & > * {
+    &:not(:last-child){
+      margin-bottom: 2rem;
+
+    }
+  }
+
+  .state-data {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+    &__text {
+      font-size: 2rem;
+      line-height: 1.25;
+    }
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .triggers > button:not(:first-child) {
+    margin-left: 1rem;
+  }
+}
