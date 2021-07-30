@@ -10,6 +10,7 @@ const NestedComponent = ({
 }) => {
   return (
     <div
+      className="nested-component"
       className={classNames('nested-component', {
         'nested-component_modified': modified
       })}

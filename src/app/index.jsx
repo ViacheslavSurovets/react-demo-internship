@@ -19,7 +19,9 @@ const App = () => {
   })
   const { testContextData, setTestContextData } = useContext(TestContext)
   const dispatch = useDispatch()
-  const { testData } = useSelector(state => state.test)
+  const { testData, users } = useSelector(state => state.test)
+
+  console.log('users', users)
 
   const { text, modified } = nestedComponentState
 
@@ -32,7 +34,7 @@ const App = () => {
     const EN_LOCALE = 'en'
     const currentLanguage = i18n.language
     const isRussianLocale = currentLanguage === RU_LOCALE
-
+    console.log(i18n)
     i18n.changeLanguage(isRussianLocale ? EN_LOCALE : RU_LOCALE)
   }
 
@@ -52,9 +54,16 @@ const App = () => {
       <div className="triggers">
         <button onClick={handleContextUpdate}>{t('updateContext')}</button>
         <button onClick={handleReduxUpdate}>{t('updateRedux')}</button>
+        <button onClick={() => dispatch(testActions.getUsers())}>
+          get users
+        </button>
       </div>
 
       <button onClick={handleLanguageChange}>{t('changeLanguage')}</button>
+
+      {users.length
+        ? users.map((u, idx) => <span key={idx}>{u.email}</span>)
+        : null}
 
       <NestedComponent
         updateNestedComponentState={handleClick}

@@ -1,5 +1,6 @@
 {
   "changeLanguage": "Поменять язык",
   "updateContext": "Обновить контекст",
-  "updateRedux": "Обновить редакс"
+  "updateRedux": "Обновить редакс",
+  "apiText": "Любой текст"
 }

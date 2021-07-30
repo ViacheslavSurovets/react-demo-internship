@@ -1,5 +1,6 @@
 {
   "changeLanguage": "Change language",
   "updateContext": "Update context",
-  "updateRedux": "Update redux"
+  "updateRedux": "Update redux",
+  "apiText": "random text"
 }
